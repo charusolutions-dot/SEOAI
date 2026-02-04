@@ -1,0 +1,39 @@
+{
+  "name": "seoai-backend",
+  "version": "1.0.0",
+  "description": "Production-ready Node.js backend for SEOAI",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "worker:dev": "ts-node-dev --respawn --transpile-only src/worker/index.ts",
+    "worker:start": "node dist/worker/index.js",
+    "ai-worker:dev": "ts-node-dev --respawn --transpile-only src/ai-worker/index.ts",
+    "ai-worker:start": "node dist/ai-worker/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy"
+  },
+  "dependencies": {
+    "bullmq": "^5.15.7",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "zod": "^3.23.8",
+    "@prisma/client": "^5.19.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.14.11",
+    "prisma": "^5.19.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  }
+}
